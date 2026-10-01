@@ -1,0 +1,118 @@
+{
+  "name": "outgrow-whatsapp-validator-ultra",
+  "version": "1.0.0",
+  "description": "OutGrow Automated WhatsApp Number Validator ULTRA with Live Google Sheets Cloud Sync",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "app": "electron .",
+    "dist": "electron-builder --win --x64",
+    "dist:portable": "electron-builder --win portable --x64",
+    "dist:dir": "electron-builder --win --dir",
+    "dist:mac": "electron-builder --mac",
+    "dist:mac:universal": "electron-builder --mac --universal",
+    "dist:mac:arm64": "electron-builder --mac --arm64",
+    "dist:mac:x64": "electron-builder --mac --x64",
+    "dist:all": "electron-builder -mw"
+  },
+  "keywords": [
+    "whatsapp",
+    "validator",
+    "ultra",
+    "google-sheets",
+    "playwright",
+    "outgrow"
+  ],
+  "author": "OutGrow",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "playwright": "^1.43.1"
+  },
+  "devDependencies": {
+    "electron": "^41.2.1",
+    "electron-builder": "^26.7.0"
+  },
+  "build": {
+    "appId": "com.outgrow.whatsappvalidator.ultra",
+    "productName": "OutGrow WhatsApp Validator Ultra",
+    "copyright": "Copyright © 2026 OutGrow",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "server.js",
+      "validator.js",
+      "sheets_sync.js",
+      "public/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "public/icon.ico",
+      "extraResources": [
+        {
+          "from": "cloudflared.exe",
+          "to": "cloudflared.exe"
+        }
+      ],
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "mac": {
+      "icon": "public/app-icon.png",
+      "category": "public.app-category.utilities",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal",
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "universal",
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "identity": null
+    },
+    "dmg": {
+      "title": "OutGrow WhatsApp Validator Ultra",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OutGrow WhatsApp Validator Ultra"
+    },
+    "portable": {
+      "artifactName": "OutGrow_WhatsApp_Validator_Ultra_Portable.exe"
+    }
+  }
+}
