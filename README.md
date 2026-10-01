@@ -6,6 +6,7 @@
   <br/>
   <p><strong>Enterprise-grade automated WhatsApp phone number verification & list hygiene platform built natively for macOS with live 2-way Google Sheets cloud synchronization.</strong></p>
 
+   [![Build macOS](https://github.com/ADEEBK195/WhatsApp-Phone-Number-Validator-Ultra-Version-for-MacOs/actions/workflows/build-mac.yml/badge.svg)](https://github.com/ADEEBK195/WhatsApp-Phone-Number-Validator-Ultra-Version-for-MacOs/actions/workflows/build-mac.yml)
   [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20%26%20Intel)-black?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/)
   [![Framework: Electron](https://img.shields.io/badge/Framework-Electron%2041-47848F?style=for-the-badge&logo=electron&logoColor=white)](https://www.electronjs.org/)
   [![Engine: Playwright](https://img.shields.io/badge/Engine-Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
